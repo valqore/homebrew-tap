@@ -2,38 +2,15 @@
 #
 # ## Generated, not written
 #
-# This file is `deploy/homebrew/qed.rb.template` in valqore/qed with the
-# version and the three checksums filled in. Edit the template there, not this
-# copy, so the binary and the formula that installs it change together.
+# This file is `deploy/homebrew/qed.rb.template` in valqore/qed, rendered by
+# `deploy/homebrew/render.sh 1.0.0`. Edit the template there, never this
+# copy: the binary and the formula that installs it are meant to change
+# together, and a hand-edit here is a second source of truth that will
+# disagree with the first one at the worst possible moment.
 #
 # The checksums below are the ones CI wrote beside each binary in the v1.0.0
-# release, read back with:
-#
-#     gh release download v1.0.0 --pattern 'qed-*.sha256' --dir /tmp/qed
-#     cat /tmp/qed/*.sha256
-#
-# They are not computed from a local build. The point of the checksum is that
-# the file Homebrew downloads is the file CI produced; a locally-computed hash
-# proves only that you hashed your own build.
-#
-# ## This formula cannot work yet
-#
-# `valqore/qed` is still a private repository, so the release URLs below are a
-# 404 for everybody. That is why this tap is private too: the repository name
-# is reserved, and nothing that would fail has been published. Both go public
-# together.
-#
-# ## Why a binary rather than a Python formula
-#
-# Week 5 shipped the fallback that SPEC §24.1 allows: a formula depending on
-# `python@3.12`. It works and it drags a Python runtime, forty resource blocks
-# and their upgrade story into `brew install`. The binary is one file with no
-# interpreter on the machine, which is what somebody adding `qed check` to a
-# laptop or a CI runner actually wants.
-#
-# `qed serve` works from the binary too, but the container is the better answer
-# for a long-running process: it is the artifact that gets an SBOM and a
-# signature.
+# release. They are not computed from a local build -- the point of the
+# checksum is that the file Homebrew downloads is the file CI produced.
 class Qed < Formula
   desc "Policy and evidence kernel for AI-agent actions"
   homepage "https://github.com/valqore/qed"
