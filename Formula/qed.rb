@@ -3,18 +3,18 @@
 # ## Generated, not written
 #
 # This file is `deploy/homebrew/qed.rb.template` in valqore/qed, rendered by
-# `deploy/homebrew/render.sh 1.0.0`. Edit the template there, never this
+# `deploy/homebrew/render.sh 1.1.1`. Edit the template there, never this
 # copy: the binary and the formula that installs it are meant to change
 # together, and a hand-edit here is a second source of truth that will
 # disagree with the first one at the worst possible moment.
 #
-# The checksums below are the ones CI wrote beside each binary in the v1.0.0
+# The checksums below are the ones CI wrote beside each binary in the v1.1.1
 # release. They are not computed from a local build -- the point of the
 # checksum is that the file Homebrew downloads is the file CI produced.
 class Qed < Formula
   desc "Policy and evidence kernel for AI-agent actions"
   homepage "https://github.com/valqore/qed"
-  version "1.0.0"
+  version "1.1.1"
   license "Apache-2.0"
 
   # One bottle per platform, because PyInstaller freezes the interpreter it
@@ -24,15 +24,15 @@ class Qed < Formula
   # what pip resolves by default.
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/valqore/qed/releases/download/v1.0.0/qed-1.0.0-macos-arm64"
-      sha256 "f0c2c7a6b4195a75e881ff59709446fe024ad6e8ea4ac164f7ac4dac780de523"
+      url "https://github.com/valqore/qed/releases/download/v1.1.1/qed-1.1.1-macos-arm64"
+      sha256 "26d1fcdfba70fdda3b9455d4338df87421b643345ba1256d5b048077332040a8"
     else
-      url "https://github.com/valqore/qed/releases/download/v1.0.0/qed-1.0.0-macos-x86_64"
-      sha256 "9bcc174b1ac3dc658b5f49133441f594b802513adc1d2154b4b07bebd4f98dd2"
+      url "https://github.com/valqore/qed/releases/download/v1.1.1/qed-1.1.1-macos-x86_64"
+      sha256 "dd32951d98f8b28841bec590f547b3c95ac5603b99b54f47fe002b42be619237"
     end
   elsif OS.linux?
-    url "https://github.com/valqore/qed/releases/download/v1.0.0/qed-1.0.0-linux-x86_64"
-    sha256 "795d8e3e0b23e8dad8f66f24ebefbeb7feb5be8a11539d4237c7f1d89d46ef17"
+    url "https://github.com/valqore/qed/releases/download/v1.1.1/qed-1.1.1-linux-x86_64"
+    sha256 "64e1c9ce4a078e61e71051c1db99d37f4f05e642cbba0d6a6a90a3178117948e"
   end
 
   def install
